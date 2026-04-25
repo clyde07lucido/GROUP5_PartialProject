@@ -17,6 +17,8 @@ namespace Customer_Folio
             InitializeComponent();
         }
 
+        public event Action<string, string, string, string, string, string, string> OnBookNow;
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -24,7 +26,19 @@ namespace Customer_Folio
 
         private void btnBookNow_Click(object sender, EventArgs e)
         {
+            string name = textBoxName.Text;
+            string phone = textBoxPhone.Text;
+            string email = textBoxEmail.Text;
 
+            string roomType = comboBoxRoomType.Text;
+            string beds = comboBoxBeds.Text;
+            string bedType = comboBoxBedType.Text;
+
+            string date = monthCalendar1.SelectionStart.ToShortDateString();
+
+            OnBookNow?.Invoke(name, phone, email, roomType, beds, bedType, date);
+
+            this.Close();
         }
 
         private void BookCustomer_Load(object sender, EventArgs e)
@@ -71,5 +85,7 @@ namespace Customer_Folio
         {
 
         }
+
+
     }
 }
