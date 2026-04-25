@@ -31,8 +31,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Analytics = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxSearchCustomer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -44,30 +47,33 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.ColRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBeds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBedType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridViewInventory = new System.Windows.Forms.DataGridView();
             this.colImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.ColRoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBeds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBedType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,18 +96,19 @@
             this.Analytics.Location = new System.Drawing.Point(4, 33);
             this.Analytics.Name = "Analytics";
             this.Analytics.Padding = new System.Windows.Forms.Padding(3);
-            this.Analytics.Size = new System.Drawing.Size(991, 505);
+            this.Analytics.Size = new System.Drawing.Size(1291, 597);
             this.Analytics.TabIndex = 0;
             this.Analytics.Text = "Analytics";
             this.Analytics.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.textBoxSearchCustomer);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
@@ -113,6 +120,49 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(486, 59);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(188, 37);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Delete All Records";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(705, 59);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(188, 37);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Delete Record";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColRoomNumber,
+            this.colCustomerName,
+            this.colPhone,
+            this.colEmail,
+            this.colRoomType,
+            this.colBeds,
+            this.colBedType,
+            this.colDate});
+            this.dataGridView1.Location = new System.Drawing.Point(25, 104);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1258, 375);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1094, 59);
@@ -123,21 +173,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxSearchCustomer
             // 
-            this.textBox1.Location = new System.Drawing.Point(159, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 29);
-            this.textBox1.TabIndex = 2;
+            this.textBoxSearchCustomer.Location = new System.Drawing.Point(193, 68);
+            this.textBoxSearchCustomer.Name = "textBoxSearchCustomer";
+            this.textBoxSearchCustomer.Size = new System.Drawing.Size(160, 29);
+            this.textBoxSearchCustomer.TabIndex = 2;
+            this.textBoxSearchCustomer.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 24);
+            this.label2.Size = new System.Drawing.Size(161, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Search Room:";
+            this.label2.Text = "Search Customer:";
             // 
             // label1
             // 
@@ -217,9 +268,12 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.button5);
             this.tabPage3.Controls.Add(this.dataGridViewInventory);
             this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.textBoxSearchProduct);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
@@ -231,20 +285,21 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(864, 74);
+            this.button2.Location = new System.Drawing.Point(1081, 74);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 29);
+            this.button2.Size = new System.Drawing.Size(175, 37);
             this.button2.TabIndex = 7;
             this.button2.Text = "Add Inventory";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox3
+            // textBoxSearchProduct
             // 
-            this.textBox3.Location = new System.Drawing.Point(179, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 29);
-            this.textBox3.TabIndex = 6;
+            this.textBoxSearchProduct.Location = new System.Drawing.Point(179, 71);
+            this.textBoxSearchProduct.Name = "textBoxSearchProduct";
+            this.textBoxSearchProduct.Size = new System.Drawing.Size(160, 29);
+            this.textBoxSearchProduct.TabIndex = 6;
+            this.textBoxSearchProduct.TextChanged += new System.EventHandler(this.textBoxSearchProduct_TextChanged);
             // 
             // label3
             // 
@@ -265,130 +320,149 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Inventory";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColRoomNumber,
-            this.colCustomerName,
-            this.colPhone,
-            this.colRoomType,
-            this.colBeds,
-            this.colBedType,
-            this.colDate});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1258, 375);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(887, 59);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 37);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Delete Record";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // ColRoomNumber
-            // 
-            this.ColRoomNumber.HeaderText = "Room Number";
-            this.ColRoomNumber.MinimumWidth = 6;
-            this.ColRoomNumber.Name = "ColRoomNumber";
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.HeaderText = "Customer Name";
-            this.colCustomerName.MinimumWidth = 6;
-            this.colCustomerName.Name = "colCustomerName";
-            // 
-            // colPhone
-            // 
-            this.colPhone.HeaderText = "Phone";
-            this.colPhone.MinimumWidth = 6;
-            this.colPhone.Name = "colPhone";
-            // 
-            // colRoomType
-            // 
-            this.colRoomType.HeaderText = "Room Type";
-            this.colRoomType.MinimumWidth = 7;
-            this.colRoomType.Name = "colRoomType";
-            // 
-            // colBeds
-            // 
-            this.colBeds.HeaderText = "Beds";
-            this.colBeds.MinimumWidth = 7;
-            this.colBeds.Name = "colBeds";
-            // 
-            // colBedType
-            // 
-            this.colBedType.HeaderText = "Bed Type";
-            this.colBedType.MinimumWidth = 7;
-            this.colBedType.Name = "colBedType";
-            // 
-            // colDate
-            // 
-            this.colDate.HeaderText = "Date";
-            this.colDate.MinimumWidth = 7;
-            this.colDate.Name = "colDate";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(668, 59);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 37);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Delete All Records";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // dataGridViewInventory
             // 
+            this.dataGridViewInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colImage,
             this.colProductName,
             this.colStock,
+            this.colPrice,
             this.colDescription});
             this.dataGridViewInventory.Location = new System.Drawing.Point(27, 128);
             this.dataGridViewInventory.Name = "dataGridViewInventory";
             this.dataGridViewInventory.RowHeadersWidth = 57;
             this.dataGridViewInventory.RowTemplate.Height = 24;
-            this.dataGridViewInventory.Size = new System.Drawing.Size(634, 337);
+            this.dataGridViewInventory.Size = new System.Drawing.Size(1229, 337);
             this.dataGridViewInventory.TabIndex = 8;
+            this.dataGridViewInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInventory_CellContentClick);
             // 
             // colImage
             // 
             this.colImage.HeaderText = "Image";
             this.colImage.MinimumWidth = 7;
             this.colImage.Name = "colImage";
-            this.colImage.Width = 140;
             // 
             // colProductName
             // 
             this.colProductName.HeaderText = "Product Name";
             this.colProductName.MinimumWidth = 7;
             this.colProductName.Name = "colProductName";
-            this.colProductName.Width = 140;
             // 
             // colStock
             // 
             this.colStock.HeaderText = "Stock";
             this.colStock.MinimumWidth = 7;
             this.colStock.Name = "colStock";
-            this.colStock.Width = 140;
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.MinimumWidth = 7;
+            this.colPrice.Name = "colPrice";
             // 
             // colDescription
             // 
             this.colDescription.HeaderText = "Description";
             this.colDescription.MinimumWidth = 7;
             this.colDescription.Name = "colDescription";
-            this.colDescription.Width = 140;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(891, 74);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(164, 37);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Edit";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(920, 60);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(156, 37);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Edit";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // ColRoomNumber
+            // 
+            this.ColRoomNumber.HeaderText = "Room Number";
+            this.ColRoomNumber.MinimumWidth = 6;
+            this.ColRoomNumber.Name = "ColRoomNumber";
+            this.ColRoomNumber.ReadOnly = true;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.HeaderText = "Customer Name";
+            this.colCustomerName.MinimumWidth = 6;
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            this.colPhone.HeaderText = "Phone";
+            this.colPhone.MinimumWidth = 6;
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.MinimumWidth = 7;
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.MinimumWidth = 7;
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            // 
+            // colBeds
+            // 
+            this.colBeds.HeaderText = "Beds";
+            this.colBeds.MinimumWidth = 7;
+            this.colBeds.Name = "colBeds";
+            this.colBeds.ReadOnly = true;
+            // 
+            // colBedType
+            // 
+            this.colBedType.HeaderText = "Bed Type";
+            this.colBedType.MinimumWidth = 7;
+            this.colBedType.Name = "colBedType";
+            this.colBedType.ReadOnly = true;
+            // 
+            // colDate
+            // 
+            this.colDate.HeaderText = "Date";
+            this.colDate.MinimumWidth = 7;
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(470, 74);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(188, 37);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Delete All Inventory";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(686, 74);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(188, 37);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Delete Inventory";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
@@ -402,12 +476,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInventory)).EndInit();
             this.ResumeLayout(false);
 
@@ -426,29 +500,35 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxSearchProduct;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSearchCustomer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColRoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBeds;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBedType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridViewInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColRoomNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCustomerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBeds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBedType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

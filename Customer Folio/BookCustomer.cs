@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Customer_Folio
 {
@@ -18,7 +19,19 @@ namespace Customer_Folio
         }
 
         public event Action<string, string, string, string, string, string, string> OnBookNow;
+        public bool IsEdit = false;
+        public DataGridViewRow EditRow;
 
+        public void SetData(string name, string phone, string email, string roomType, string beds, string bedType, string date)
+        {
+            textBoxName.Text = name;
+            textBoxPhone.Text = phone;
+            textBoxEmail.Text = email;
+            comboBoxRoomType.Text = roomType;
+            comboBoxBeds.Text = beds;
+            comboBoxBedType.Text = bedType;
+            monthCalendar1.Text = date;
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -36,7 +49,20 @@ namespace Customer_Folio
 
             string date = monthCalendar1.SelectionStart.ToShortDateString();
 
-            OnBookNow?.Invoke(name, phone, email, roomType, beds, bedType, date);
+            if (IsEdit)
+            {
+                EditRow.Cells[1].Value = name;
+                EditRow.Cells[2].Value = phone;
+                EditRow.Cells[3].Value = email;
+                EditRow.Cells[4].Value = roomType;
+                EditRow.Cells[5].Value = beds;
+                EditRow.Cells[6].Value = bedType;
+                EditRow.Cells[7].Value = date;
+            }
+            else
+            {
+                OnBookNow?.Invoke(name, phone, email, roomType, beds, bedType, date);
+            }
 
             this.Close();
         }
